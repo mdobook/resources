@@ -42,9 +42,6 @@ def truss(A):
     DOF = 2  # number of degrees of freedom
 
     # mass
-    print(rho)
-    print(A)
-    print(L)
     mass = np.sum(rho*A*L)
 
     # stiffness and stress matrices
