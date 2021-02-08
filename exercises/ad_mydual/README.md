@@ -1,0 +1,1 @@
+These are starter scripts as an exercise to write your own miniature forward-mode AD library - at least enough to solve the problem: `exp(x)/sqrt(sin(x)^3 + cos(x)^3)`.  The purpose is not to develop your own AD package (many exist and there are some implementation details we won't get into), but rather to gain an understanding of how these work.
