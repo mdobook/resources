@@ -27,7 +27,7 @@ def truss(A):
     start = [5, 3, 6, 4, 4, 2, 5, 6, 3, 4]
     finish = [3, 1, 4, 2, 3, 1, 4, 3, 2, 1]
     phi = np.array([0, 0, 0, 0, 90, 90, -45, 45, -45, 45])*pi/180
-    L = [Ls, Ls, Ls, Ls, Ls, Ls, Ld, Ld, Ld, Ld]
+    L = np.array([Ls, Ls, Ls, Ls, Ls, Ls, Ld, Ld, Ld, Ld])
 
     nbar = len(A)  # number of bars
     E = 1e7*np.ones(nbar)  # modulus of elasticity
