@@ -1,0 +1,1 @@
+Tabulated data for exercises 10.4 (linear regression) and 10.5 (cross validation).
