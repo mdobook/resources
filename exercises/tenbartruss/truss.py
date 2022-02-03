@@ -68,8 +68,8 @@ def truss(A):
 
 
     # boundary condition
-    idx = np.squeeze(np.where(rigid))
-    remove = node2idx(idx+1, DOF)  # add 1 b.c. made indexing 1-based for convenience
+    idx = [i+1 for i, val in enumerate(rigid) if val] # add 1 b.c. made indexing 1-based for convenience
+    remove = node2idx(idx, DOF)
 
     K = np.delete(K, remove, axis=0)
     K = np.delete(K, remove, axis=1)
@@ -119,7 +119,7 @@ def bar(E, A, L, phi):
     K = E*A/L*np.vstack([k1, -k1])
 
     # stress matrix
-    S = E/L*np.array([[-c, -s, c, s]])
+    S = E/L*np.array([-c, -s, c, s])
 
     return K, S
 
@@ -134,7 +134,7 @@ def node2idx(node, DOF):
 
     """
 
-    idx = np.array([], dtype=np.int)
+    idx = np.array([], dtype=int)
 
     for i in range(len(node)):
 
@@ -142,6 +142,6 @@ def node2idx(node, DOF):
         start = DOF*(n-1)
         finish = DOF*n
 
-        idx = np.concatenate((idx, np.arange(start, finish, dtype=np.int)))
+        idx = np.concatenate((idx, np.arange(start, finish, dtype=int)))
 
     return idx
